@@ -6,12 +6,26 @@ the phone-size tests; it could not be install-tested in an emulator (see below).
 
 FILES (compiled builds only, no source code)
   TonyFordsFreeKJVBible.exe                       Windows 10/11 64-bit, portable single file
-  Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage  Linux PC x86_64, portable
+  Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage  Linux PC x86_64, portable (slim rebuild under GitHub 100 MB limit)
   Tony-Fords-Free-KJV-Bible_1.0.0.apk             Android 7.0+, arm64 / armv7 / x86_64, release-signed
 SHA-256
   5184d4136156235e39e08c43bed7ebcce77d3990c124cf38e694625ddcea128b  TonyFordsFreeKJVBible.exe
-  c097364b734e22ca43bb98c5644e23160c3ebce0bc0ec4df7fcb6a8fec539970  Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage
+  a0a295d8379e78337fa1fe5cbd13c4506e326ad350cfcb2d97f61c5f660bcbe0  Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage
   095ad6a612d3b80841cb2d636675e56f837a48ccbeba9de52101ce0caeadf496  Tony-Fords-Free-KJV-Bible_1.0.0.apk
+
+LINUX AppImage size (slim rebuild Nov 9, 2026 afternoon ET)
+  98,613,752 bytes (94.05 MiB / 98.61 MB) — under GitHub's 100 MB upload limit
+  Previous oversized build was 112,650,744 bytes
+
+What was trimmed for the slim Linux AppImage (version still 1.0.0; no feature cut for Bible use)
+  - Explicit bundle.linux.appimage.bundleMediaFramework = false (GStreamer plugins were never bundled; HTML5 Music uses system codecs)
+  - Deduped duplicate SONAME library copies (librsvg/libgio/etc.)
+  - Removed packaged docs
+  - Replaced unused WebKit image codecs with tiny stubs: libavif + AV1 encoder deps (libaom/librav1e/libSvtAv1Enc/libgav1) and libjxl
+  - Stubbed unused flite voice data libs WebKit links but this app never calls (kept real flite core + en_US voices WebKit registers)
+  - Read-aloud still uses speechSynthesis / system voices (espeak-ng or speech-dispatcher on Linux)
+  - Music tab unchanged (HTML5 Audio / internet radio; needs system GStreamer plugins like any normal Linux desktop)
+  - No AVIF/JPEG-XL image decode inside the WebView (app never uses those formats)
 
 BIBLE + SEARCH TESTS (67 of 67 PASS)
   PASS 66 books, 31,102 verses; Genesis 1:1, John 3:16, Psalm 23 correct
@@ -42,11 +56,16 @@ WINDOWS (tested on Tony's PC)
   PASS highlights, bookmark, note and theme kept after closing and reopening
   NOTE the PC was locked during the test, so no picture of the window was taken
 
-LINUX (AppImage tested on the build computer)
-  PASS starts and shows the Master layout; Today, Read, Settings work
-  PASS highlight, bookmark and note made by clicking; still there after restart
-  PASS copy puts the verse with its reference on the clipboard
-  PASS image card saved to "Verse Images"; backup saved to "Backups" (next to the AppImage)
+LINUX (slim AppImage retested on the build computer, Nov 9, 2026 ~3:10 PM America/New_York)
+  PASS starts; window "Tony Ford's Free KJV Bible"; WebKitWebProcess stays up; Master layout
+  PASS Today (Verse of the Day Philippians 4:8), Search, Topics, My Bible, Music, About, Settings
+  PASS search "Dont let the right hand" -> Matthew 6:3 top result (alms / left hand / right hand)
+  PASS search/topic "marriage" -> Topic Marriage (18 passages) and verse hits (e.g. John 2:2)
+  PASS "Love thy neibor" covered by the 67/67 search suite (same JS as AppImage)
+  PASS highlight John 1:1 (yellow), bookmark, note "Linux note test" via My Bible
+  PASS data folder "Tony Ford's Free KJV Bible Data" next to the AppImage; my-bible.json kept after restart
+  PASS dropdown filters visible (Whole/OT/NT, All book types, All books)
+  PASS Music tab shows Library / Radio; About shows Credits / license / TonyFord.us
 
 ANDROID
   PASS APK builds and is signed (Tony Ford / TonyFord.us release key); arm64, armv7 and x86_64 included
@@ -59,3 +78,4 @@ KNOWN LIMITS
   - Read aloud uses the device's own voices. Linux needs espeak-ng or speech-dispatcher installed.
   - Strong's shows numbers and KJV word counts only (Strong's dictionaries online are not free to copy).
   - Music tab needs the internet; everything else is fully offline.
+  - Linux AppImage does not bundle GStreamer plugins or AVIF/JPEG-XL decoders (not used by this Bible app).
