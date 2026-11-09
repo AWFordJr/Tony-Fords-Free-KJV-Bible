@@ -13,7 +13,7 @@ Made for Windows PCs, Linux PCs and Android phones.
 |---|---|---|
 | Windows 10/11 (64-bit) | [**TonyFordsFreeKJVBible.exe**](https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/blob/main/Downloads/TonyFordsFreeKJVBible.exe?raw=1) | Portable: no installer. Put it in any folder and double-click. Uses the Microsoft Edge WebView2 that comes with Windows 10/11. |
 | Linux PC (x86_64) | [**Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage**](https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/blob/main/Downloads/Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage?raw=1) | Portable AppImage: make it executable (`chmod +x`) and run it. |
-| Android 7.0 and newer | Coming soon | Copy the APK to your phone, open it and allow "install unknown apps" for your file manager. |
+| Android 7.0 and newer | [**Tony-Fords-Free-KJV-Bible_1.0.0.apk**](https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/blob/main/Downloads/Tony-Fords-Free-KJV-Bible_1.0.0.apk?raw=1) ⚠️ *Not yet tested on a real phone* | Copy the APK to your phone, open it and allow "install unknown apps" for your file manager. |
 
 SHA-256 checksums are in [`Downloads/SHA256SUMS.txt`](Downloads/SHA256SUMS.txt), and test results are in [`TEST-NOTE.txt`](TEST-NOTE.txt).
 
