@@ -1,0 +1,20 @@
+{
+  "version": "1.1.0",
+  "versionCode": 1100000,
+  "notes": "Updater fix: downloads from repo Downloads/ (no GitHub Releases/tags). In-app updater with SHA-256 verify, Bible Quiz (155), voice picker, peaceful background, prayer list, scripture memory, topical chips, Quiet Listening, Large Print, streak + continue, OT/NT/book search filters. Verse of the Day unchanged. Pure 1769 KJV. Note: v1.0 cannot auto-update into 1.1.",
+  "apk": {
+    "file": "Tony-Fords-Free-KJV-Bible_1.1.0.apk",
+    "sha256": "0ec2d6fa27a714c6f5e2b53528ff72a362b9f3aeb9559deead59ee6735981665",
+    "url": "https://raw.githubusercontent.com/AWFordJr/Tony-Fords-Free-KJV-Bible/main/Downloads/Tony-Fords-Free-KJV-Bible_1.1.0.apk"
+  },
+  "windows": {
+    "file": "TonyFordsFreeKJVBible.exe",
+    "sha256": "790f6e791ee44bf401ffbf89698e4f5287a6c2ffc821755e4fb4eaf0eb8f93eb",
+    "url": "https://raw.githubusercontent.com/AWFordJr/Tony-Fords-Free-KJV-Bible/main/Downloads/TonyFordsFreeKJVBible.exe"
+  },
+  "linux": {
+    "file": "Tony-Fords-Free-KJV-Bible_1.1.0_amd64.AppImage",
+    "sha256": "b92b44dbf4c03f80f3015e28d986bc463bab4bd9c5c6695be9ae0598bb270e07",
+    "url": "https://raw.githubusercontent.com/AWFordJr/Tony-Fords-Free-KJV-Bible/main/Downloads/Tony-Fords-Free-KJV-Bible_1.1.0_amd64.AppImage"
+  }
+}

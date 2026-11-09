@@ -7,17 +7,19 @@
 ![Tony Ford's Free KJV Bible](cover.png)
 
 The complete King James Bible (66 books, 31,102 verses), fully offline, free, with no ads, no account and no tracking.
-Made for Windows PCs, Linux PCs and Android phones.
+Version **1.1.0**. Made for Windows PCs, Linux PCs and Android phones.
 
 ## Downloads
 
 | System | Download | How to run |
 |---|---|---|
 | Windows 10/11 (64-bit) | [**TonyFordsFreeKJVBible.exe**](https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/blob/main/Downloads/TonyFordsFreeKJVBible.exe?raw=1) | Portable: no installer. Put it in any folder and double-click. Uses the Microsoft Edge WebView2 that comes with Windows 10/11. |
-| Linux PC (x86_64) | [**Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage**](https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/blob/main/Downloads/Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage?raw=1) | Portable AppImage: make it executable (`chmod +x`) and run it. |
-| Android 7.0 and newer | [**Tony-Fords-Free-KJV-Bible_1.0.0.apk**](https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/blob/main/Downloads/Tony-Fords-Free-KJV-Bible_1.0.0.apk?raw=1) | Copy the APK to your phone, open it and allow "install unknown apps" for your file manager. |
+| Linux PC (x86_64) | [**Tony-Fords-Free-KJV-Bible_1.1.0_amd64.AppImage**](https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/blob/main/Downloads/Tony-Fords-Free-KJV-Bible_1.1.0_amd64.AppImage?raw=1) | Portable AppImage: make it executable (`chmod +x`) and run it. |
+| Android 7.0 and newer | [**Tony-Fords-Free-KJV-Bible_1.1.0.apk**](https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/blob/main/Downloads/Tony-Fords-Free-KJV-Bible_1.1.0.apk?raw=1) **(not yet tested on a real phone)** | Copy the APK to your phone, open it and allow "install unknown apps" for your file manager. |
 
 SHA-256 checksums are in [`Downloads/SHA256SUMS.txt`](Downloads/SHA256SUMS.txt), and test results are in [`TEST-NOTE.txt`](TEST-NOTE.txt).
+
+**Updating from 1.0:** people on version 1.0 need to install 1.1 by hand once (download and replace the app). After that, later updates come through the app's built-in updater.
 
 Your highlights, bookmarks, notes and settings are saved in a folder named
 **"Tony Ford's Free KJV Bible Data"** right next to the exe or AppImage, so you can carry the
@@ -34,21 +36,25 @@ Use **Settings → Back up** to save a backup file any time.
   Results are ranked with your words highlighted. Recent searches are remembered.
 - **Topics**: type a subject like *marriage*, *forgiveness*, *anxiety* and get the key verses, plus over 4,600
   topics from Nave's Topical Bible.
-- **Today**: a Verse of the Day, "Continue reading", recently read chapters, and **reading plans**
+- **Today**: a Verse of the Day, "Continue reading", reading streak, recently read chapters, and **reading plans**
   (Bible in a Year, New Testament in 90 Days, Psalms & Proverbs in 31 Days, Gospels in 30 Days) with progress.
-- **Highlights** in 5 colors, **bookmarks** and **notes**, all listed in *My Bible*.
+- **Highlights** in 5 colors, **bookmarks** and **notes**, all listed in *My Bible*. Export them as a
+  journal (.txt or .html) from Settings.
 - **Share**: copy a verse or range with its reference (reference first or last), share to email, X or Facebook,
-  the Android share sheet, or make a pretty **verse image card**.
+  the Android share sheet, or make a pretty **verse image card** (credits the app name and TonyFord.us).
 - **Study**: Treasury of Scripture Knowledge **cross references** and **Strong's numbers** for every word,
   with how the KJV translates each Hebrew/Greek word and every verse that uses it.
 - **Words of Jesus in red** (can be turned off).
-- **Read aloud** with your device's own voices.
-- Dark, Light, Sepia and Night themes; text size; line spacing; the Lora book font or the
-  dyslexia-friendly OpenDyslexic font.
+- **Read aloud** with your device's own voices, with an optional sleep timer (15 / 30 / 60 minutes or end of chapter).
+- Dark, Light, Sepia and Night themes; text size; line spacing; Large Print; the Lora book font or the
+  dyslexia-friendly OpenDyslexic font. Chapter headers show a simple verse count (no commentary).
+- **About → Team** credits Tony Ford and the Dreamwork Team (Red, Sassy, Xeno, V, Cricket, Izzy, Kitty,
+  Ashara, Hashtag, Ishara, Xeon, Namie) with awfordjr@gmail.com and TonyFord.us.
 - Keyboard shortcuts on PC (← → chapters, Ctrl+F search, Ctrl+G go to, Ctrl +/− text size, R read aloud,
   B bookmark, C copy, N note, S share, 1–5 highlight colors, 0 remove highlight, T Today, Esc close)
   and swipe left/right for chapters on Android.
 - Optional **Music** tab for internet radio (only this tab uses the internet).
+- **In-app updater** (starting with 1.1): checks `Downloads/version.json` and installs updates with SHA-256 verify.
 
 ## Sources and licenses
 

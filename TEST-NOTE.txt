@@ -1,81 +1,53 @@
-Tony Ford's Free KJV Bible 1.0.0 - Test Note
-Tested: Monday, November 9, 2026 (Eastern Time)
+Tony Ford's Free KJV Bible 1.1.0 - Test Note
+Tested: Monday, November 9, 2026 (Eastern Time / America/New_York)
 
-RESULT: PASS for Windows, Linux and the app itself. Android APK builds, signs and passes
-the phone-size tests; it could not be install-tested in an emulator (see below).
+RESULT: PASS for Windows and Linux. Android APK builds and is release-signed (same
+Tony Ford / TonyFord.us keystore as 1.0.0); phone-size UI suite PASS. Emulator install
+skipped (protect sibling tffl VM). Verse of the Day left unchanged from 1.0 (behavior and look).
 
-FILES (compiled builds only, no source code)
+FILES (compiled builds only, no source code) — publish to repo Downloads/ (NO GitHub releases/tags)
   TonyFordsFreeKJVBible.exe                       Windows 10/11 64-bit, portable single file
-  Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage  Linux PC x86_64, portable (slim rebuild under GitHub 100 MB limit)
-  Tony-Fords-Free-KJV-Bible_1.0.0.apk             Android 7.0+, arm64 / armv7 / x86_64, release-signed
+  Tony-Fords-Free-KJV-Bible_1.1.0_amd64.AppImage  Linux PC x86_64, portable (slim, under GitHub 100 MB)
+  Tony-Fords-Free-KJV-Bible_1.1.0.apk             Android 7.0+, arm64 / armv7 / x86_64, release-signed
+  version.json                                    Place in public repo Downloads/ (Izzy upload)
+
 SHA-256
-  5184d4136156235e39e08c43bed7ebcce77d3990c124cf38e694625ddcea128b  TonyFordsFreeKJVBible.exe
-  a0a295d8379e78337fa1fe5cbd13c4506e326ad350cfcb2d97f61c5f660bcbe0  Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage
-  095ad6a612d3b80841cb2d636675e56f837a48ccbeba9de52101ce0caeadf496  Tony-Fords-Free-KJV-Bible_1.0.0.apk
+  790f6e791ee44bf401ffbf89698e4f5287a6c2ffc821755e4fb4eaf0eb8f93eb  TonyFordsFreeKJVBible.exe
+  b92b44dbf4c03f80f3015e28d986bc463bab4bd9c5c6695be9ae0598bb270e07  Tony-Fords-Free-KJV-Bible_1.1.0_amd64.AppImage
+  0ec2d6fa27a714c6f5e2b53528ff72a362b9f3aeb9559deead59ee6735981665  Tony-Fords-Free-KJV-Bible_1.1.0.apk
 
-LINUX AppImage size (slim rebuild Nov 9, 2026 afternoon ET)
-  98,613,752 bytes (94.05 MiB / 98.61 MB) — under GitHub's 100 MB upload limit
-  Previous oversized build was 112,650,744 bytes
+SIZES
+  exe      9,385,984 bytes
+  AppImage 99,985,912 bytes (95.35 MiB) — under GitHub 100 MB limit
+  APK     36,816,238 bytes
 
-What was trimmed for the slim Linux AppImage (version still 1.0.0; no feature cut for Bible use)
-  - Explicit bundle.linux.appimage.bundleMediaFramework = false (GStreamer plugins were never bundled; HTML5 Music uses system codecs)
-  - Deduped duplicate SONAME library copies (librsvg/libgio/etc.)
-  - Removed packaged docs
-  - Replaced unused WebKit image codecs with tiny stubs: libavif + AV1 encoder deps (libaom/librav1e/libSvtAv1Enc/libgav1) and libjxl
-  - Stubbed unused flite voice data libs WebKit links but this app never calls (kept real flite core + en_US voices WebKit registers)
-  - Read-aloud still uses speechSynthesis / system voices (espeak-ng or speech-dispatcher on Linux)
-  - Music tab unchanged (HTML5 Audio / internet radio; needs system GStreamer plugins like any normal Linux desktop)
-  - No AVIF/JPEG-XL image decode inside the WebView (app never uses those formats)
+UPDATER (blocker fix)
+  - Download URLs use raw.githubusercontent.com/.../main/Downloads/<file>, falling back to master
+  - Optional per-platform "url" in version.json (https only under github.com/AWFordJr/ or
+    raw.githubusercontent.com/AWFordJr/)
+  - SHA-256 is mandatory (JS + Rust + Kotlin)
+  - No GitHub Releases/tags — Izzy publishes builds only into the repo Downloads/ folder
+  - IMPORTANT: v1.0 users cannot auto-update to 1.1 (updater ships starting with 1.1)
+
+NEW IN 1.1.0
+  - In-app updater as above; Bible Quiz (155 Q); voice picker; peaceful background
+  - Prayer list; scripture memory helper; topical chips; Quiet Listening; Large Print/a11y
+  - Reading streak + Continue where you left off; OT/NT/book search filters
+  - Sleep timer; journal export; About Team credits
+  - Future idea (skipped): Android home-screen widget
 
 BIBLE + SEARCH TESTS (67 of 67 PASS)
-  PASS 66 books, 31,102 verses; Genesis 1:1, John 3:16, Psalm 23 correct
-  PASS "Dont let the right hand" -> Matthew 6:3 is the top result
-  PASS "Love thy neibor" -> did-you-mean "love thy neighbor"; finds Lev 19:18, Matt 22:39, Mark 12:31, Rom 13:9
-  PASS topic "marriage" -> Gen 2:24, Matt 19:4-6, Eph 5:22-33, Heb 13:4 (+ Nave's "Marriage")
-  PASS word order, modern words (you/your -> thee/thy), typos, All/Any/"exact phrase" modes,
-       Old/New Testament, book type and single-book filters, references like "jn 3 16"
-  PASS search speed: a few milliseconds per search
+UPDATER UNIT TESTS (15 of 15 PASS) — resolved URLs point at Downloads/ (main then master)
+APP FEATURE TESTS (desktop 57 of 57 PASS, phone 360x720 67 of 67 PASS, 0 errors)
+  PASS Updater download URLs point at Downloads/ (main then master)
+  PASS v1.0 data loads in v1.1 (highlight kept, sleep defaults, daysRead ready)
+  PASS Quiz, topical chips, prayer, memory, a11y, Quiet Listening settings
 
-APP FEATURE TESTS (desktop 28 of 28 PASS, phone size 360x720 30 of 30 PASS, no errors)
-  PASS Today tab: Verse of the Day, continue reading, recently read
-  PASS Reading plans: start, check off chapters, mark day done, progress saved
-  PASS Words of Jesus in red (on/off)
-  PASS Themes Dark/Light/Sepia/Night, Lora and OpenDyslexic fonts, line spacing, text size
-  PASS Copy format: reference first or last
-  PASS Study: Treasury cross references (preview + open) and Strong's numbers with KJV word counts
-  PASS Verse image card (1080x1350 with app credit)
-  PASS Recent searches; reading history; clear history
-  PASS Backup export, restore, bad backup rejected
-  PASS Keyboard shortcuts (arrows, Ctrl+F, etc.); swipe for next chapter on phones
-  PASS No sideways scrolling on a small phone screen
+FOR IZZY
+  Upload version.json AND the three binaries to:
+    https://github.com/AWFordJr/Tony-Fords-Free-KJV-Bible/tree/main/Downloads
+  (no GitHub releases/tags — keeps Source code zips from appearing). Branch main preferred;
+  app also tries master for version.json and Downloads/<file>.
 
-WINDOWS (tested on Tony's PC)
-  PASS exe is one file; needs no extra DLLs (only parts built into Windows)
-  PASS starts, window "Tony Ford's Free KJV Bible" opens and responds, closes cleanly
-  PASS makes "Tony Ford's Free KJV Bible Data" next to the exe
-  PASS highlights, bookmark, note and theme kept after closing and reopening
-  NOTE the PC was locked during the test, so no picture of the window was taken
-
-LINUX (slim AppImage retested on the build computer, Nov 9, 2026 ~3:10 PM America/New_York)
-  PASS starts; window "Tony Ford's Free KJV Bible"; WebKitWebProcess stays up; Master layout
-  PASS Today (Verse of the Day Philippians 4:8), Search, Topics, My Bible, Music, About, Settings
-  PASS search "Dont let the right hand" -> Matthew 6:3 top result (alms / left hand / right hand)
-  PASS search/topic "marriage" -> Topic Marriage (18 passages) and verse hits (e.g. John 2:2)
-  PASS "Love thy neibor" covered by the 67/67 search suite (same JS as AppImage)
-  PASS highlight John 1:1 (yellow), bookmark, note "Linux note test" via My Bible
-  PASS data folder "Tony Ford's Free KJV Bible Data" next to the AppImage; my-bible.json kept after restart
-  PASS dropdown filters visible (Whole/OT/NT, All book types, All books)
-  PASS Music tab shows Library / Radio; About shows Credits / license / TonyFord.us
-
-ANDROID
-  PASS APK builds and is signed (Tony Ford / TonyFord.us release key); arm64, armv7 and x86_64 included
-  PASS phone layout tests in a phone-size browser (see above)
-  NOT TESTED install in the Android emulator: the build computer was too busy to start it
-  -> Please install on a phone and check: opens, swipe chapters, Share (share sheet),
-     Image card -> Share image, Read aloud (uses the phone's voice).
-
-KNOWN LIMITS
-  - Read aloud uses the device's own voices. Linux needs espeak-ng or speech-dispatcher installed.
-  - Strong's shows numbers and KJV word counts only (Strong's dictionaries online are not free to copy).
-  - Music tab needs the internet; everything else is fully offline.
-  - Linux AppImage does not bundle GStreamer plugins or AVIF/JPEG-XL decoders (not used by this Bible app).
+Credits: awfordjr@gmail.com · TonyFord.us · Dreamwork Team
+License: Free, CC BY-NC-ND 4.0 (not open source). KJV text public domain. Source stays private.

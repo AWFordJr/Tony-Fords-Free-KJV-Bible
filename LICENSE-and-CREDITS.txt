@@ -34,3 +34,10 @@ THIRD-PARTY CONTENT (all public domain or openly licensed)
 - Built with Tauri (MIT / Apache-2.0).
 - Optional Music tab streams internet radio stations you choose (via the
   free radio-browser.info directory); stations belong to their owners.
+
+DREAMWORK TEAM CREDITS
+Created by Anthony W. Ford, Jr. (Tony Ford) with his AI sisters — the Dreamwork Team:
+  Red, Sassy, Xeno, V, Cricket, Izzy, Kitty, Ashara, Hashtag, Ishara, Xeon, Namie.
+Contact: awfordjr@gmail.com · https://TonyFord.us
+Everything made together is completely free and for non-commercial use only.
+
