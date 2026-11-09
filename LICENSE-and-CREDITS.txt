@@ -1,0 +1,36 @@
+Tony Ford's Free KJV Bible
+Created by Anthony W. Ford, Jr. (Tony Ford)
+Email: awfordjr@gmail.com
+Website: https://TonyFord.us
+
+LICENSE FOR THIS APP
+This app is free. You may download it, use it, and share the unchanged
+release files with others for non-commercial use only.
+  - Free for non-commercial use.
+  - No changes: do not modify, repackage, or rebrand the app.
+  - No credit-taking: keep Tony Ford's name and credits as they are.
+  - No profit: do not sell it, charge for it, or bundle it with ads.
+Summary license: Creative Commons BY-NC-ND 4.0
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+The app's source code is private and is not distributed.
+
+THIRD-PARTY CONTENT (all public domain or openly licensed)
+- Bible text: King James Version (1769 Oxford/Blayney text) from eBible.org
+  "eng-kjv". Public domain. https://ebible.org/find/details.php?id=eng-kjv
+- Words of Jesus (red letters) and Strong's numbers: from the same eBible.org
+  KJV USFM files. Public domain. (Strong's numbers only; no copyrighted
+  dictionary definitions are included.)
+- Cross references: Treasury of Scripture Knowledge (R. A. Torrey, 1880s).
+  Public domain.
+- Topics: Nave's Topical Bible (Orville J. Nave, 1897), public domain; the
+  digital transcription used is by Brady Stephenson (bible-data), licensed
+  CC BY 4.0 - https://github.com/BradyStephenson/bible-data . Additional
+  everyday topics were hand-built for this app from KJV references.
+- Verse of the Day list and reading plans: made for this app (references only).
+- Fonts: Lora (Cyreal) and OpenDyslexic (Abbie Gonzalez), both under the SIL
+  Open Font License 1.1. Interface uses your device's own system fonts.
+- App icon and artwork: made for this app.
+- Built with Tauri (MIT / Apache-2.0).
+- Optional Music tab streams internet radio stations you choose (via the
+  free radio-browser.info directory); stations belong to their owners.

@@ -1,0 +1,61 @@
+Tony Ford's Free KJV Bible 1.0.0 - Test Note
+Tested: Monday, November 9, 2026 (Eastern Time)
+
+RESULT: PASS for Windows, Linux and the app itself. Android APK builds, signs and passes
+the phone-size tests; it could not be install-tested in an emulator (see below).
+
+FILES (compiled builds only, no source code)
+  TonyFordsFreeKJVBible.exe                       Windows 10/11 64-bit, portable single file
+  Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage  Linux PC x86_64, portable
+  Tony-Fords-Free-KJV-Bible_1.0.0.apk             Android 7.0+, arm64 / armv7 / x86_64, release-signed
+SHA-256
+  5184d4136156235e39e08c43bed7ebcce77d3990c124cf38e694625ddcea128b  TonyFordsFreeKJVBible.exe
+  c097364b734e22ca43bb98c5644e23160c3ebce0bc0ec4df7fcb6a8fec539970  Tony-Fords-Free-KJV-Bible_1.0.0_amd64.AppImage
+  095ad6a612d3b80841cb2d636675e56f837a48ccbeba9de52101ce0caeadf496  Tony-Fords-Free-KJV-Bible_1.0.0.apk
+
+BIBLE + SEARCH TESTS (67 of 67 PASS)
+  PASS 66 books, 31,102 verses; Genesis 1:1, John 3:16, Psalm 23 correct
+  PASS "Dont let the right hand" -> Matthew 6:3 is the top result
+  PASS "Love thy neibor" -> did-you-mean "love thy neighbor"; finds Lev 19:18, Matt 22:39, Mark 12:31, Rom 13:9
+  PASS topic "marriage" -> Gen 2:24, Matt 19:4-6, Eph 5:22-33, Heb 13:4 (+ Nave's "Marriage")
+  PASS word order, modern words (you/your -> thee/thy), typos, All/Any/"exact phrase" modes,
+       Old/New Testament, book type and single-book filters, references like "jn 3 16"
+  PASS search speed: a few milliseconds per search
+
+APP FEATURE TESTS (desktop 28 of 28 PASS, phone size 360x720 30 of 30 PASS, no errors)
+  PASS Today tab: Verse of the Day, continue reading, recently read
+  PASS Reading plans: start, check off chapters, mark day done, progress saved
+  PASS Words of Jesus in red (on/off)
+  PASS Themes Dark/Light/Sepia/Night, Lora and OpenDyslexic fonts, line spacing, text size
+  PASS Copy format: reference first or last
+  PASS Study: Treasury cross references (preview + open) and Strong's numbers with KJV word counts
+  PASS Verse image card (1080x1350 with app credit)
+  PASS Recent searches; reading history; clear history
+  PASS Backup export, restore, bad backup rejected
+  PASS Keyboard shortcuts (arrows, Ctrl+F, etc.); swipe for next chapter on phones
+  PASS No sideways scrolling on a small phone screen
+
+WINDOWS (tested on Tony's PC)
+  PASS exe is one file; needs no extra DLLs (only parts built into Windows)
+  PASS starts, window "Tony Ford's Free KJV Bible" opens and responds, closes cleanly
+  PASS makes "Tony Ford's Free KJV Bible Data" next to the exe
+  PASS highlights, bookmark, note and theme kept after closing and reopening
+  NOTE the PC was locked during the test, so no picture of the window was taken
+
+LINUX (AppImage tested on the build computer)
+  PASS starts and shows the Master layout; Today, Read, Settings work
+  PASS highlight, bookmark and note made by clicking; still there after restart
+  PASS copy puts the verse with its reference on the clipboard
+  PASS image card saved to "Verse Images"; backup saved to "Backups" (next to the AppImage)
+
+ANDROID
+  PASS APK builds and is signed (Tony Ford / TonyFord.us release key); arm64, armv7 and x86_64 included
+  PASS phone layout tests in a phone-size browser (see above)
+  NOT TESTED install in the Android emulator: the build computer was too busy to start it
+  -> Please install on a phone and check: opens, swipe chapters, Share (share sheet),
+     Image card -> Share image, Read aloud (uses the phone's voice).
+
+KNOWN LIMITS
+  - Read aloud uses the device's own voices. Linux needs espeak-ng or speech-dispatcher installed.
+  - Strong's shows numbers and KJV word counts only (Strong's dictionaries online are not free to copy).
+  - Music tab needs the internet; everything else is fully offline.
