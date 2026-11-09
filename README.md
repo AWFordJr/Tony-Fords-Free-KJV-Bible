@@ -2,6 +2,8 @@
 
 **Created by Anthony W. Ford, Jr. (Tony Ford)** · awfordjr@gmail.com · https://TonyFord.us
 
+🌐 More of Tony's free content: [TonyFord.vip](https://tonyford.vip)
+
 ![Tony Ford's Free KJV Bible](cover.png)
 
 The complete King James Bible (66 books, 31,102 verses), fully offline, free, with no ads, no account and no tracking.
